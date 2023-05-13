@@ -1,26 +1,32 @@
-import Burger from "../model/Burger.js";
+import Character from "../models/character.js";
+import CharacterAvatar from "../models/character.js";
+import mongoose from "mongoose";
 
-const getCharactersAvatars = async (req, res, next) => {
-  const charactersAvatars = await Character.find();
+const getCharacters = async (req, res, next) => {
+  try {
+    const charactersAvatars = await CharacterAvatar.find();
+    res.json(charactersAvatars);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getCharacterById = async (req, res, next) => {
+  const characterId = req.params.characterId;
+  const charactersAvatars = await CharacterAvatar.findById(characterId);
   res.json(charactersAvatars);
 };
 
-const getCharactersAvatarsById = async (req, res, next) => {
-  const productId = req.params.productId;
-  const charactersAvatars = await Character.findById(productId);
-  res.json(charactersAvatars);
+const addCharacter = async (req, res, next) => {
+  let character = new Character();
+  character.name = req.body.name;
+  character.description = req.body.description;
+  character.type = req.body.type;
+  character.price = req.body.price;
+  character.image = req.body.image;
+  await character.save();
+
+  res.json(character);
 };
 
-const addBurger = async (req, res, next) => {
-  let burger = new Character();
-  burger.name = req.body.name;
-  burger.description = req.body.description;
-  burger.type = req.body.type;
-  burger.price = req.body.price;
-  burger.image = req.body.image;
-  await burger.save();
-
-  res.json(true);
-};
-
-export { getCharactersAvatars, addBurger, getCharactersAvatarsById };
+export { getCharacters, addCharacter, getCharacterById };

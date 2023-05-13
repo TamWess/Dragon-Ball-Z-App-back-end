@@ -1,0 +1,24 @@
+
+###
+
+# Récupérer les avatars
+
+{{baseUrl}}/characters
+
+###
+
+# Récupérer un avatar par son Id
+
+{{baseUrl}}/characters/645b7dbefaa46cc5be48efa6
+
+###
+
+POST {{baseUrl}}/characters HTTP/1.1
+Content-Type: application/json
+
+{
+	"name": "Pikkon",
+	"maxLevel": "none",
+	"biography": "Pikkon, known as Paikuhan (パイクーハン) in the original Japanese version, i…",
+	"img": "../assets/img/pikkon-character.jpg"
+}

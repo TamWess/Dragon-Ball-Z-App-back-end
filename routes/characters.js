@@ -1,16 +1,15 @@
 import express from "express";
+
 const router = express.Router();
 
-
 import {
-  getBurgers,
-  addBurger,
-  getBurgerById,
-} from "../controller/BurgerController.js";
-import { getCharactersAvatars } from "../controllers/charactersController.js";
+  addCharacter,
+  getCharacterById,
+  getCharacters,
+} from "../controllers/charactersController.js";
 
-router.get("/get", getCharactersAvatars);
-router.post("/post", addBurger);
-router.get("/:productId", getBurgerById);
+router.get("", getCharacters);
+router.post("", addCharacter);
+router.get("/:characterId", getCharacterById);
 
 export default router;

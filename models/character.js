@@ -15,14 +15,14 @@ const CharacterSchema = new Schema(
       type: String,
     },
     biography: {
-      type: String
+      type: String,
     },
     thumbmail: {
-      type: String
+      type: String,
     },
   },
   {
-    collection: "DBZCharacters",
+    collection: "Characters",
     timestamps: true,
   }
 );

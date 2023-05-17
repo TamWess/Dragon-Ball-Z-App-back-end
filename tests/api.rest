@@ -18,7 +18,9 @@ Content-Type: application/json
 
 {
 	"name": "Pikkon",
-	"maxLevel": "none",
-	"biography": "Pikkon, known as Paikuhan (パイクーハン) in the original Japanese version, i…",
-	"img": "../assets/img/pikkon-character.jpg"
+	"max Level": "none",
+	"biography": "Pikkon is okay",
+	"img": "../assets/img/pikkon-character.jpg",
+	"thumbmail": ""
 }
+

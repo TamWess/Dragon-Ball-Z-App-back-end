@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 // ROUTER
-import charactersAvatarRoute from "./routes/characters.js";
+import charactersRoute from "./routes/characters.js";
 // import accompagnementRoute from "./routes/accompagnement.js";
 // import boissonRoute from "./routes/boisson.js";
 // import dessertRoute from "./routes/dessert.js";
@@ -30,7 +30,7 @@ async function main() {
   app.use(cors());
 
   // PATH ROUTER
-  app.use("/api/characters", charactersAvatarRoute);
+  app.use("/api/characters", charactersRoute);
   // app.use("/api/accompagnement", accompagnementRoute);
   // app.use("/api/boisson", boissonRoute);
   // app.use("/api/dessert", dessertRoute);

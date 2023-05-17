@@ -4,7 +4,8 @@ import mongoose from "mongoose";
 
 const getCharacters = async (req, res, next) => {
   try {
-    const charactersAvatars = await CharacterAvatar.find();
+    const charactersAvatars = await Character.find();
+    console.log({charactersAvatars})
     res.json(charactersAvatars);
   } catch (error) {
     next(error);
